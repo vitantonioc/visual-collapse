@@ -1,6 +1,6 @@
   {
  "name": "visual-collapse",
-  "version": "1.0.1",
+  "version": "0.0.1",
   "authors": 
     "Vitantonio Castronuovo",
   "description": "Collapsibles are accordion elements that expand when clicked on. These allow you to hide content that is not immediately relevant to the use. This collapse application is build with Materialize, Bootstrap and Jquery ",
