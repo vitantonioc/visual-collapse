@@ -70,18 +70,23 @@ screenshots:
 <pre><b>jsondatanHidden(index)</b> --> function for visibility element in collapse</pre>
 
 
-<!--
+<!---
 ```
 <custom-element-demo>
   <template>
-    <link rel="import" href="demo/index.html">
+    <title>visual-collapse</title>
+    
+        <scri pt src="../webcomponentsjs/webcomponents-lite.js"></script>
+    
+        <link rel="import" href="../iron-component-page/iron-component-page.html">
+    <iron-component-page src="visual-collapse.html"></iron-component-page>
     <next-code-block></next-code-block>
   </template>
 </custom-element-demo>
 ```
 -->
 ```html
-<visual-collapse></visual-collapse>
+<visual-collapse>...</visual-collapse>
 ```
 
 
