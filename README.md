@@ -70,6 +70,23 @@ screenshots:
 <pre><b>jsondatanHidden(index)</b> --> function for visibility element in collapse</pre>
 
 
+<!--
+```
+<custom-element-demo>
+  <template>
+    <link rel="import" href="visual-collapse.html">
+    <next-code-block></next-code-block>
+  </template>
+</custom-element-demo>
+```
+-->
+```html
+<other-element></other-element>
+<visual-collapse></visual-collapse>
+```
+
+
+
 ## License
 MIT
 
