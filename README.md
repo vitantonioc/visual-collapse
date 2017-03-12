@@ -46,6 +46,24 @@ screenshots:
 ![alt tag](https://github.com/vitantonioc/visual-collapse/blob/master/visual-collapse.jpg)
 
 
+## API
+## Properties
+action --> string type for action : accordion or expandable
+backgroundtext --> string background text collapse
+backgroundtitle --> string background title collapse
+collapsibledata --> string collapsable mode, accept only accordion or expandable
+colorheader --> string text color header title
+colortext --> string text color
+idcollapse --> number id for multiple collapse
+manager --> Boolean notifies
+titleCollapse --> String Default: visual-collapse title for collapse
+urljson --> string path file with data
+visible --> Array positions into array visible in collapse
+width --> number width px row collapsable
+## Methods
+jsondatanHidden(index) --> function for visibility element in collapse
+
+
 ## License
 MIT
 
