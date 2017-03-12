@@ -81,7 +81,6 @@ screenshots:
 ```
 -->
 ```html
-<other-element></other-element>
 <visual-collapse></visual-collapse>
 ```
 
