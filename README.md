@@ -42,3 +42,7 @@ screenshots:
 
 ![alt tag](https://github.com/vitantonioc/visual-collapse/blob/master/visual-collapse.jpg)
 
+
+## License
+MIT
+
