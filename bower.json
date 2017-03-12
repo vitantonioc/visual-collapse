@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "authors": 
     "Vitantonio Castronuovo",
-  "description": "Collapsibles are accordion elements that expand when clicked on. This collapse application is build with Materialize, Bootstrap and Jquery ",
+  "description": "This collapse application is build with Materialize, Bootstrap and Jquery ",
   "keywords": [
     "web-component",
     "polymer",
