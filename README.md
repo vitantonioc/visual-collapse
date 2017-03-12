@@ -74,7 +74,7 @@ screenshots:
 ```
 <custom-element-demo>
   <template>
-    <link rel="import" href="visual-collapse.html">
+    <link rel="import" href="demo/index.html">
     <next-code-block></next-code-block>
   </template>
 </custom-element-demo>
