@@ -75,10 +75,8 @@ screenshots:
 <custom-element-demo>
   <template>
     <title>visual-collapse</title>
-    
-        <scri pt src="../webcomponentsjs/webcomponents-lite.js"></script>
-    
-        <link rel="import" href="../iron-component-page/iron-component-page.html">
+        <script src="../webcomponentsjs/webcomponents-lite.js"></script>
+       <link rel="import" href="../iron-component-page/iron-component-page.html">
     <iron-component-page src="visual-collapse.html"></iron-component-page>
     <next-code-block></next-code-block>
   </template>
