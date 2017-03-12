@@ -73,24 +73,11 @@ screenshots:
 ```
 <custom-element-demo>
   <template>
-    <custom-element-demo>
-      <<!doctype html>
-    <html>
-      <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
-    
-        <title>visual-collapse</title>
-    
-        <script src="../webcomponentsjs/webcomponents-lite.js"></script>
-    
-        <link rel="import" href="../iron-component-page/iron-component-page.html">
-    
+    <link rel="import" href="../iron-component-page/iron-component-page.html">
+       <link rel="import" href="../iron-demo-helpers/demo-pages-shared-styles.html">
+        <link rel="import" href="../iron-demo-helpers/demo-snippet.html">
+        <link rel="import" href="../iron-ajax/iron-ajax.html">
         <iron-component-page src="visual-collapse.html"></iron-component-page>
-     
-        
-      </template>
-    </custom-element-demo>
     <next-code-block></next-code-block>
   </template>
 </custom-element-demo>
