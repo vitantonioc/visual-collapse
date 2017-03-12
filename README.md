@@ -10,13 +10,19 @@ Collapsibles are accordion elements that expand when clicked on. These allow you
 
 First, make sure you have the [Polymer CLI](https://www.npmjs.com/package/polymer-cli) installed. Then run `polymer serve` to serve your application locally.
 
-## Viewing Your Application
+## Install bower components
+
+```
+$ bower install
+```
+
+## Viewing Application
 
 ```
 $ polymer serve
 ```
 
-## Building Your Application
+## Building Application
 
 ```
 $ polymer build
