@@ -49,19 +49,19 @@ screenshots:
 ## API
 ## Properties
 <pre>action --> string type for action : accordion or expandable</pre>
-backgroundtext --> string background text collapse
-backgroundtitle --> string background title collapse
-collapsibledata --> string collapsable mode, accept only accordion or expandable
-colorheader --> string text color header title
-colortext --> string text color
-idcollapse --> number id for multiple collapse
-manager --> Boolean notifies
-titleCollapse --> String Default: visual-collapse title for collapse
-urljson --> string path file with data
-visible --> Array positions into array visible in collapse
-width --> number width px row collapsable
+<pre>backgroundtext --> string background text collapse</pre>
+<pre>backgroundtitle --> string background title collapse</pre>
+<pre>collapsibledata --> string collapsable mode, accept only accordion or expandable</pre>
+<pre>colorheader --> string text color header title</pre>
+<pre>colortext --> string text color</pre>
+<pre>idcollapse --> number id for multiple collapse</pre>
+<pre>manager --> Boolean notifies</pre>
+<pre>titleCollapse --> String Default: visual-collapse title for collapse</pre>
+<pre>urljson --> string path file with data</pre>
+<pre>visible --> Array positions into array visible in collapse</pre>
+<pre>width --> number width px row collapsable</pre>
 ## Methods
-jsondatanHidden(index) --> function for visibility element in collapse
+<pre>jsondatanHidden(index) --> function for visibility element in collapse</pre>
 
 
 ## License
