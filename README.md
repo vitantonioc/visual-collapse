@@ -49,19 +49,19 @@ screenshots:
 ## API
 ## Properties
 <pre><b>action</b> --> string type for action : accordion or expandable</pre>
-<pre>backgroundtext --> string background text collapse</pre>
-<pre>backgroundtitle --> string background title collapse</pre>
-<pre>collapsibledata --> string collapsable mode, accept only accordion or expandable</pre>
-<pre>colorheader --> string text color header title</pre>
-<pre>colortext --> string text color</pre>
-<pre>idcollapse --> number id for multiple collapse</pre>
-<pre>manager --> Boolean notifies</pre>
-<pre>titleCollapse --> String Default: visual-collapse title for collapse</pre>
-<pre>urljson --> string path file with data</pre>
-<pre>visible --> Array positions into array visible in collapse</pre>
-<pre>width --> number width px row collapsable</pre>
+<pre><b>backgroundtext</b> --> string background text collapse</pre>
+<pre><b>backgroundtitle</b> --> string background title collapse</pre>
+<pre><b>collapsibledata</b> --> string collapsable mode, accept only accordion or expandable</pre>
+<pre><b>colorheader</b> --> string text color header title</pre>
+<pre><b>colortext</b> --> string text color</pre>
+<pre><b>idcollapse</b> --> number id for multiple collapse</pre>
+<pre><b>manager</b> --> Boolean notifies</pre>
+<pre><b>titleCollapse</b> --> String Default: visual-collapse title for collapse</pre>
+<pre><b>urljson</b> --> string path file with data</pre>
+<pre><b>visible</b> --> Array positions into array visible in collapse</pre>
+<pre><b>width</b> --> number width px row collapsable</pre>
 ## Methods
-<pre>jsondatanHidden(index) --> function for visibility element in collapse</pre>
+<pre><b>jsondatanHidden(index)</b> --> function for visibility element in collapse</pre>
 
 
 ## License
