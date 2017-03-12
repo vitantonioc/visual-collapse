@@ -1,5 +1,6 @@
 # \<visual-collapse\>
 
+## Polymer Element.
 Collapsibles are accordion elements that expand when clicked on. These allow you to hide content that is not immediately relevant to the user
 
 ## Install the Polymer-CLI
