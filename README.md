@@ -39,5 +39,5 @@ Your application is already set up to be tested via [web-component-tester](https
 
 screenshots:
 
-![alt tag](https://github.com/vitantonioc/AngularDataGrid/blob/master/visual-collapse.jpg)
+![alt tag](https://github.com/vitantonioc/visual-collapse/blob/master/visual-collapse.jpg)
 
