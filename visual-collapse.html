@@ -1,0 +1,199 @@
+<link rel="import" href="../polymer/polymer.html">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="bower_components/Materialize/dist/css/materialize.css" />
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/Materialize/dist/js/materialize.js"></script>
+<script src="bower_components/Materialize/js/collapsible.js"></script>
+<script src="bower_components/polymer-global-variables/dist/polymer-global-variables.js" charset="utf-8"></script>
+
+
+<!--
+`visual-collapse`
+Collapsibles are accordion elements that expand when clicked on. These allow you to hide content that is not immediately relevant to the user. This collapse application is build with <b>Materialize</b>, <b>Bootstrap</b> and <b>Jquery</b>.
+
+
+@demo demo/index.html 
+-->
+
+<dom-module id="visual-collapse" manager>
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+      .collapsible {
+  border-top: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  margin: 0.5rem 0 1rem 0;
+}
+
+.collapsible-header {
+  display: block;
+  cursor: pointer;
+  min-height: 3rem;
+  line-height: 3rem;
+  padding: 0 1rem;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.collapsible-header i {
+  width: 2rem;
+  font-size: 1.6rem;
+  line-height: 3rem;
+  display: block;
+  float: left;
+  text-align: center;
+  margin-right: 1rem;
+}
+
+.collapsible-body {
+  display: none;
+  border-bottom: 1px solid #ddd;
+  box-sizing: border-box;
+  padding: 2rem;
+}
+
+.side-nav .collapsible,
+.side-nav.fixed .collapsible {
+  border: none;
+  box-shadow: none;
+}
+
+.side-nav .collapsible li,
+.side-nav.fixed .collapsible li {
+  padding: 0;
+}
+
+.side-nav .collapsible-header,
+.side-nav.fixed .collapsible-header {
+  background-color: transparent;
+  border: none;
+  line-height: inherit;
+  height: inherit;
+  padding: 0 16px;
+}
+
+.side-nav .collapsible-header:hover,
+.side-nav.fixed .collapsible-header:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.side-nav .collapsible-header i,
+.side-nav.fixed .collapsible-header i {
+  line-height: inherit;
+}
+
+.side-nav .collapsible-body,
+.side-nav.fixed .collapsible-body {
+  border: 0;
+  background-color: #fff;
+}
+.collapsible.popout.visual-collapse{
+
+}
+
+.side-nav .collapsible-body li a,
+.side-nav.fixed .collapsible-body li a {
+  padding: 0 23.5px 0 31px;
+}
+
+.collapsible.popout {
+  border: none;
+  box-shadow: none;
+}
+
+.collapsible.popout > li {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  margin: 0 24px;
+  transition: margin 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.collapsible.popout > li.active {
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+  margin: 16px 0;
+}
+    </style>
+      <iron-ajax class="ajaxClass" auto url$="[[globals.urlJson]]" handle-as="json" last-response="{{data}}">
+    </iron-ajax>
+    <h5>[[titleCollapse]] </h5>
+    <ul class$="collapsible {{action}}"  >
+    <template is="dom-repeat" items="{{globals.datiJson}}" as="data" indexAs="index">
+    <li hidden$="[[jsondatanHidden(index)]]" id$="{{index}}">
+      <div class="collapsible-header" style$="color:{{globals.colorheader}};background:{{globals.backgroundtitle}}"><i class="material-icons">{{data.icon}}</i>{{data.title}}</div>
+      <div class="collapsible-body" style$="color:{{globals.colortext}};background:{{globals.backgroundtext}}" inner-h-t-m-l="{{data.text}}"></div> 
+    </li>
+  </template>   
+  </ul>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'visual-collapse',
+      properties: {
+        /* title for collapse  */
+        titleCollapse: {
+          type: String,
+          value: 'visual-collapse',
+        },
+          /*path file with data */
+          urljson: String,
+          /* collapsable mode, accept only accordion or expandable */
+          collapsibledata:String ,
+           /*width px row collapsable */
+          width:Number ,
+          /*  id for multiple collapse  */
+          idcollapse:Number,
+           /*type for action : accordion or expandable */
+          action:String ,
+          /*  background title collapse */
+          backgroundtitle:String,
+            /*  background text collapse */
+          backgroundtext:String,
+          /*  text color header title */
+          colorheader:String,
+          /*  text color   */
+          colortext:String,
+           /* positions into array visible in collapse */
+          visible:Array,
+          manager: {
+            type: Boolean,
+            notify: true
+          },
+           
+         },  
+         /* function for visibility element in collapse*/     
+         jsondatanHidden: function(index){
+           if( this.visible.indexOf(index) >= 0){ 
+                return this.index = false;                      
+               }else{
+                 return this.index = true;  }
+            },
+         ready: function() {     
+          
+         Polymer.globalsManager.set('urlJson' , this.urljson);
+         Polymer.globalsManager.set('colorheader' , this.colorheader);
+         Polymer.globalsManager.set('colortext' , this.colortext); 
+         Polymer.globalsManager.set('backgroundtitle' , this.backgroundtitle); 
+         Polymer.globalsManager.set('backgroundtext' , this.backgroundtext); 
+         Polymer.globalsManager.set('visible' , this.visible);  
+         Polymer.globalsManager.set('collapsable' , this.collapsibledata); 
+         Polymer.globalsManager.set('setwidth' , this.width);                 
+         window.addEventListener('WebComponentsReady', function(e) { 
+         document.querySelector('ul').setAttribute('data-collapsible',  Polymer.globalsManager.get('collapsable')); 
+         document.querySelector('ul').setAttribute('style',  'width:'+Polymer.globalsManager.get('setwidth')+'px');              
+         $('.collapsible').collapsible();         
+         var ironAjax = document.querySelector('.ajaxClass');
+            Polymer.globalsManager.set('ajaxJson', ironAjax);  
+            Polymer.globalsManager.get('ajaxJson').addEventListener('response', function () {
+            });                 
+            Polymer.globalsManager.set('datiJson' , Polymer.globalsManager.get('ajaxJson').lastResponse);
+           
+         });
+           
+      }
+
+    });
+  </script>
+</dom-module>
