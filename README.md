@@ -48,7 +48,7 @@ screenshots:
 
 ## API
 ## Properties
-<pre>action --> string type for action : accordion or expandable</pre>
+<pre><b>action</b> --> string type for action : accordion or expandable</pre>
 <pre>backgroundtext --> string background text collapse</pre>
 <pre>backgroundtitle --> string background title collapse</pre>
 <pre>collapsibledata --> string collapsable mode, accept only accordion or expandable</pre>
