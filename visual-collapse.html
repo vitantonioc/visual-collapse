@@ -4,7 +4,7 @@
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <script src="bower_components/Materialize/dist/js/materialize.js"></script>
 <script src="bower_components/Materialize/js/collapsible.js"></script>
-<script src="lib/polymer-global-variable.js" charset="utf-8"></script>
+<script src="lib/variableScope.js" charset="utf-8"></script>
 
 
 <!--
@@ -115,14 +115,14 @@ Collapsibles are accordion elements that expand when clicked on. These allow you
   margin: 16px 0;
 }
     </style>
-      <iron-ajax class="ajaxClass" auto url$="[[globals.urlJson]]" handle-as="json" last-response="{{data}}">
+      <iron-ajax class="ajaxClass" auto url$="[[variable.urlJson]]" handle-as="json" last-response="{{data}}">
     </iron-ajax>
     <h5>[[titleCollapse]] </h5>
     <ul class$="collapsible {{action}}"  >
-    <template is="dom-repeat" items="{{globals.datiJson}}" as="data" indexAs="index">
+    <template is="dom-repeat" items="{{variable.datiJson}}" as="data" indexAs="index">
     <li hidden$="[[jsondatanHidden(index)]]" id$="{{index}}">
-      <div class="collapsible-header" style$="color:{{globals.colorheader}};background:{{globals.backgroundtitle}}"><i class="material-icons">{{data.icon}}</i>{{data.title}}</div>
-      <div class="collapsible-body" style$="color:{{globals.colortext}};background:{{globals.backgroundtext}}" inner-h-t-m-l="{{data.text}}"></div> 
+      <div class="collapsible-header" style$="color:{{variable.colorheader}};background:{{variable.backgroundtitle}}"><i class="material-icons">{{data.icon}}</i>{{data.title}}</div>
+      <div class="collapsible-body" style$="color:{{variable.colortext}};background:{{variable.backgroundtext}}" inner-h-t-m-l="{{data.text}}"></div> 
     </li>
   </template>   
   </ul>
@@ -172,23 +172,23 @@ Collapsibles are accordion elements that expand when clicked on. These allow you
             },
          ready: function() {     
           
-         Polymer.globalsManager.set('urlJson' , this.urljson);
-         Polymer.globalsManager.set('colorheader' , this.colorheader);
-         Polymer.globalsManager.set('colortext' , this.colortext); 
-         Polymer.globalsManager.set('backgroundtitle' , this.backgroundtitle); 
-         Polymer.globalsManager.set('backgroundtext' , this.backgroundtext); 
-         Polymer.globalsManager.set('visible' , this.visible);  
-         Polymer.globalsManager.set('collapsable' , this.collapsibledata); 
-         Polymer.globalsManager.set('setwidth' , this.width);                 
+         Polymer.variableScope.set('urlJson' , this.urljson);
+         Polymer.variableScope.set('colorheader' , this.colorheader);
+         Polymer.variableScope.set('colortext' , this.colortext); 
+         Polymer.variableScope.set('backgroundtitle' , this.backgroundtitle); 
+         Polymer.variableScope.set('backgroundtext' , this.backgroundtext); 
+         Polymer.variableScope.set('visible' , this.visible);  
+         Polymer.variableScope.set('collapsable' , this.collapsibledata); 
+         Polymer.variableScope.set('setwidth' , this.width);                 
          window.addEventListener('WebComponentsReady', function(e) { 
-         document.querySelector('ul').setAttribute('data-collapsible',  Polymer.globalsManager.get('collapsable')); 
-         document.querySelector('ul').setAttribute('style',  'width:'+Polymer.globalsManager.get('setwidth')+'px');              
+         document.querySelector('ul').setAttribute('data-collapsible',  Polymer.variableScope.get('collapsable')); 
+         document.querySelector('ul').setAttribute('style',  'width:'+Polymer.variableScope.get('setwidth')+'px');              
          $('.collapsible').collapsible();         
          var ironAjax = document.querySelector('.ajaxClass');
-            Polymer.globalsManager.set('ajaxJson', ironAjax);  
-            Polymer.globalsManager.get('ajaxJson').addEventListener('response', function () {
+            Polymer.variableScope.set('ajaxJson', ironAjax);  
+            Polymer.variableScope.get('ajaxJson').addEventListener('response', function () {
             });                 
-            Polymer.globalsManager.set('datiJson' , Polymer.globalsManager.get('ajaxJson').lastResponse);
+            Polymer.variableScope.set('datiJson' , Polymer.variableScope.get('ajaxJson').lastResponse);
            
          });
            
