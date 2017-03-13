@@ -86,7 +86,26 @@ screenshots:
 ```html
 <visual-collapse>...</visual-collapse>
 ```
+## Use
 
+Import element : <link rel="import" href="../visual-collapse.html">
+
+Change properties:
+```html
+  <visual-collapse 
+        idcollapse="1"
+        collapsibledata="accordion"
+        action="popout"
+        width="350" 
+        visible="[2,0,1,4]"
+        colorheader="white" 
+        backgroundtitle="grey"
+        backgroundtext="white"
+        colortext="green"
+        urljson="data.json" 
+        manager>
+ </visual-collapse>
+```
 
 
 ## License
