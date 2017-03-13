@@ -1,6 +1,6 @@
   {
  "name": "visual-collapse",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "authors": 
     "Vitantonio Castronuovo",
   "description": "This collapse application is build with Materialize, Bootstrap and Jquery ",
@@ -21,7 +21,7 @@
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
     "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.0.0",
     "web-component-tester": "^4.0.0",
-    "polymer-global-variables": "polymer-selective-global-variables#^1.0.2",
     "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
   }
 }
+
