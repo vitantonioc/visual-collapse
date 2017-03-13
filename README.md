@@ -88,7 +88,10 @@ screenshots:
 ```
 ## Use
 
-Import element : <link rel="import" href="../visual-collapse.html">
+Import element :
+```html
+<link rel="import" href="../visual-collapse.html">
+```
 
 Change properties:
 ```html
