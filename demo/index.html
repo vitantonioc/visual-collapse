@@ -18,18 +18,33 @@
       <demo-snippet>
         <template>
           <visual-collapse 
-                        idcollapse="1"
+                        idcollapse="one"
+                        ajaxclass="ajaxclass"
                         collapsibledata="accordion"
                         action="popout"
                         width="350" 
-                        visible="[2,0,1,4]"
+                        visible="[0,1,3,4]"
                         colorheader="white" 
-                        backgroundtitle="grey"
+                        backgroundtitle="blue"
                         backgroundtext="white"
                         colortext="green"
                         urljson="data.json" 
                         manager>
           </visual-collapse>
+          <visual-collapse 
+                        idcollapse="two"
+                        ajaxclass="ajaxclass2"
+                        collapsibledata="expandable"
+                        action=""
+                        width="370" 
+                        visible="[1,2,3]"
+                        colorheader="yellow" 
+                        backgroundtitle="grey"
+                        backgroundtext="white"
+                        colortext="red"
+                        urljson="data.1.json" 
+                        manager>
+          </visual-collapse> 
         </template>
       </demo-snippet>
     </div>
