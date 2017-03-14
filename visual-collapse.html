@@ -4,7 +4,6 @@
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <script src="bower_components/Materialize/dist/js/materialize.js"></script>
 <script src="bower_components/Materialize/js/collapsible.js"></script>
-<script src="lib/variableScope.js" charset="utf-8"></script>
 
 
 <!--
@@ -115,14 +114,14 @@ Collapsibles are accordion elements that expand when clicked on. These allow you
   margin: 16px 0;
 }
     </style>
-      <iron-ajax class="ajaxClass" auto url$="[[variable.urlJson]]" handle-as="json" last-response="{{data}}">
+      <iron-ajax class$="[[ajaxclass]]" auto url$="{{urljson}}" handle-as="json" last-response="{{data}}">
     </iron-ajax>
-    <h5>[[titleCollapse]] </h5>
-    <ul class$="collapsible {{action}}"  >
-    <template is="dom-repeat" items="{{variable.datiJson}}" as="data" indexAs="index">
+    <h5>[[titleCollapse]]</h5> 
+    <ul class$="collapsible {{action}}" id$={{idcollapse}} >
+    <template is="dom-repeat" items="{{data}}" as="data" indexAs="index">
     <li hidden$="[[jsondatanHidden(index)]]" id$="{{index}}">
-      <div class="collapsible-header" style$="color:{{variable.colorheader}};background:{{variable.backgroundtitle}}"><i class="material-icons">{{data.icon}}</i>{{data.title}}</div>
-      <div class="collapsible-body" style$="color:{{variable.colortext}};background:{{variable.backgroundtext}}" inner-h-t-m-l="{{data.text}}"></div> 
+      <div class="collapsible-header" style$="color:{{colorheader}};background:{{backgroundtitle}}"><i class="material-icons">{{data.icon}}</i>{{data.title}}</div>
+      <div class="collapsible-body" style$="color:{{colortext}};background:{{backgroundtext}}" inner-h-t-m-l="{{data.text}}"></div> 
     </li>
   </template>   
   </ul>
@@ -136,27 +135,64 @@ Collapsibles are accordion elements that expand when clicked on. These allow you
         titleCollapse: {
           type: String,
           value: 'visual-collapse',
-        },
+           },
           /*path file with data */
-          urljson: String,
+          urljson: {
+            type: String,
+            notify: true
+          },
           /* collapsable mode, accept only accordion or expandable */
-          collapsibledata:String ,
+          collapsibledata:{ 
+            type:String ,
+            notify: true
+          },
            /*width px row collapsable */
-          width:Number ,
+          width:{
+            type: Number ,
+            notify: true
+          },
           /*  id for multiple collapse  */
-          idcollapse:Number,
+          idcollapse:{
+            type: String,
+            notify: true
+          },
+         /*  name for class iron-ajax  */
+          ajaxclass:{
+            type:String,
+            notify: true
+          },
            /*type for action : accordion or expandable */
-          action:String ,
+          action:{
+            type:String ,
+            notify: true
+          },
           /*  background title collapse */
-          backgroundtitle:String,
+          backgroundtitle:{
+            type:String,
+            notify: true
+          },
             /*  background text collapse */
-          backgroundtext:String,
+          backgroundtext:{
+            type:String,
+            notify: true
+          },
           /*  text color header title */
-          colorheader:String,
+          colorheader:{
+            type:String,
+            notify: true
+          },
           /*  text color   */
-          colortext:String,
+          colortext:{
+            type:String,
+            reflectToAttribute:true,
+            notify: true
+          },
            /* positions into array visible in collapse */
-          visible:Array,
+          visible:{
+            type: Array,
+            notify: true,
+            value: function() {return [];}
+          },
           manager: {
             type: Boolean,
             notify: true
@@ -170,30 +206,18 @@ Collapsibles are accordion elements that expand when clicked on. These allow you
                }else{
                  return this.index = true;  }
             },
-         ready: function() {     
-          
-         Polymer.variableScope.set('urlJson' , this.urljson);
-         Polymer.variableScope.set('colorheader' , this.colorheader);
-         Polymer.variableScope.set('colortext' , this.colortext); 
-         Polymer.variableScope.set('backgroundtitle' , this.backgroundtitle); 
-         Polymer.variableScope.set('backgroundtext' , this.backgroundtext); 
-         Polymer.variableScope.set('visible' , this.visible);  
-         Polymer.variableScope.set('collapsable' , this.collapsibledata); 
-         Polymer.variableScope.set('setwidth' , this.width);                 
+         ready: function() {      
          window.addEventListener('WebComponentsReady', function(e) { 
-         document.querySelector('ul').setAttribute('data-collapsible',  Polymer.variableScope.get('collapsable')); 
-         document.querySelector('ul').setAttribute('style',  'width:'+Polymer.variableScope.get('setwidth')+'px');              
-         $('.collapsible').collapsible();         
-         var ironAjax = document.querySelector('.ajaxClass');
-            Polymer.variableScope.set('ajaxJson', ironAjax);  
-            Polymer.variableScope.get('ajaxJson').addEventListener('response', function () {
-            });                 
-            Polymer.variableScope.set('datiJson' , Polymer.variableScope.get('ajaxJson').lastResponse);
-           
-         });
-           
+         document.querySelector('ul[id='+ this.idcollapse +']').setAttribute('data-collapsible', this.collapsibledata); 
+         document.querySelector('ul[id='+ this.idcollapse +']').setAttribute('style',  'width:'+ this.width +'px');              
+         $('.collapsible').collapsible();
+         var ironAjax = document.querySelector('.'+  this.ajaxclass); 
+            this.ajaxjson = ironAjax;
+            this.ajaxjson.addEventListener('response', function () {
+            });                
+            this.ajaxjson.lastResponse;
+            }.bind(this));           
       }
-
     });
   </script>
 </dom-module>
