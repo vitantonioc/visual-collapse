@@ -110,7 +110,7 @@ Change properties:
       manager>
    </visual-collapse>
 ```
-Json data:
+Json data1:
 ```html
 [
     {"icon": "repeat_one", "title": "First" , "text": "Lorem ipsum dolor sit amet <a href='#' title='link1' target='_blank'>link1 </a>"},
@@ -120,6 +120,18 @@ Json data:
     {"icon": "whatshot", "title": "Five" , "text": "Lorem ipsum dolor sit amet5"}              
 ]
 ```
+Json data2:
+```html
+[
+    {"icon": "repeat_one", "title": "Six" , "text": "Lorem ipsum dolor sit amet <a href='#' title='link1' target='_blank'>link1 </a>"},
+    {"icon": "live_help", "title": "Seven" , "text": "Lorem ipsum dolor sit amet2 <a href='#' title='Polymer img'><img src='polymer.png' style='width:60px' /></a>"},
+    {"icon": "spellcheck", "title": "Eight" , "text": "Lorem ipsum dolor sit amet3 <a href='#'  title='link2' target='_blank'>link2 </a>"},
+    {"icon": "error_outline", "title": "Nine" , "text": "Lorem ipsum dolor sit amet4"},
+    {"icon": "whatshot", "title": "Ten" , "text": "Lorem ipsum dolor sit amet5"}              
+]
+
+```
+
 
 ## License
 MIT
