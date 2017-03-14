@@ -96,18 +96,19 @@ Import element :
 Change properties:
 ```html
   <visual-collapse 
-        idcollapse="1"
-        collapsibledata="accordion"
-        action="popout"
-        width="350" 
-        visible="[2,0,1,4]"
-        colorheader="white" 
-        backgroundtitle="grey"
-        backgroundtext="white"
-        colortext="green"
-        urljson="data.json" 
-        manager>
- </visual-collapse>
+      idcollapse="one"
+      ajaxclass="ajaxclass"
+      collapsibledata="accordion"
+      action="popout"
+      width="350" 
+      visible="[0,1,3,4]"
+      colorheader="white" 
+      backgroundtitle="blue"
+      backgroundtext="white"
+      colortext="green"
+      urljson="data.json" 
+      manager>
+   </visual-collapse>
 ```
 
 
